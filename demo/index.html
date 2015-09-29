@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="https://rawgit.com/julianshapiro/velocity/master/velocity.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="../dist/fluffyCheckbox.min.css"/>
+    <script src="../dist/fluffyCheckbox.min.js"></script>
+
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+
+<body ng-app="app" ng-init="ch2 = true">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Fluffy Checkboxes</h1>
+
+            <div>
+                This page is a demonstration of AngularJS directive <strong>fluffy-checkbox</strong>.
+                You can find its repository at <a href="https://github.com/mnn/fluffy-checkbox">github.com/mnn/fluffy-checkbox</a>.
+            </div>
+
+            <div>
+                <fluffy-checkbox label="checkbox 1" value="ch1"></fluffy-checkbox>
+                <fluffy-checkbox label="checkbox 2" value="ch2"></fluffy-checkbox>
+            </div>
+            <div>
+                <fluffy-checkbox label="checkbox 3" value="ch3"></fluffy-checkbox>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>name</th>
+                        <th>value</th>
+                    </tr>
+                    <tr>
+                        <td>ch1</td>
+                        <td>{{ch1}}</td>
+                    </tr>
+                    <tr>
+                        <td>ch2</td>
+                        <td>{{ch2}}</td>
+                    </tr>
+                    <tr>
+                        <td>ch3</td>
+                        <td>{{ch3}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

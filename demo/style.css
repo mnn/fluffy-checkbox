@@ -1,0 +1,26 @@
+body {
+    font-size: 20px;
+    background-color: #090000;
+    color: #e86dc3;
+}
+
+table, td, th {
+    border: 1px solid #222;
+}
+
+td, th {
+    padding: 0.2em;
+}
+
+.col-xs-12 > div {
+    padding-bottom: 0.5em;
+}
+
+/* customizations of fluffy checkbox */
+fluffy-checkbox .fc-outer {
+    border-color: #e86dc3;
+}
+
+fluffy-checkbox .fc-inner {
+    background-color: #89e86d;
+}

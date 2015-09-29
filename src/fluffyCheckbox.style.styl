@@ -1,0 +1,29 @@
+fluffy-checkbox
+  checkbox-size = 0.5em
+  checkbox-border-width = 0.2em
+  border-color = black
+  active-color = black
+  cursor default
+  & *
+    box-sizing: content-box;
+
+  .fc-outer
+    display inline-block
+    border checkbox-border-width solid border-color
+    width checkbox-size
+    height checkbox-size
+    margin 0 (checkbox-size / 5 / 2)
+    padding (checkbox-size / 5)
+
+  .fc-inner
+    background-color active-color
+    height 100%
+
+  .fc-outer
+    &.fc-checked .fc-inner
+      opacity 1
+    &.fc-unchecked .fc-inner
+      opacity 0
+
+  .fc-label
+    display inline-block
