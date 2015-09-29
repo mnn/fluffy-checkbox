@@ -9,26 +9,26 @@ Dependencies
 
 Download
 --------
-Grab (preferably minified) `.js` and `.css` from `dist` directory.
+Grab (preferably minified) `.js` file and `.css` file from `dist` directory.
 
 Usage
 -----
 Include dependencies and directive files like this:
-```
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="https://rawgit.com/julianshapiro/velocity/master/velocity.min.js"></script>
+```xml
+<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+<script src="https://rawgit.com/julianshapiro/velocity/master/velocity.min.js"></script>
 
-    <link rel="stylesheet" href="vendor/fluffyCheckbox/fluffyCheckbox.min.css"/>
-    <script src="vendor/fluffyCheckbox/fluffyCheckbox.min.js"></script>
+<link rel="stylesheet" href="vendor/fluffyCheckbox/fluffyCheckbox.min.css"/>
+<script src="vendor/fluffyCheckbox/fluffyCheckbox.min.js"></script>
 ```
 
 and add dependency on fluffyCheckbox module to your app.
-```
+```javascript
 angular.module("app", ["fluffyCheckbox"]);
 ```
 
 You can also configure animation lengths.
-```
+```javascript
 angular.module("app")
 .config(function (FluffyCheckboxServiceProvider) {
   var fcs = FluffyCheckboxServiceProvider;
@@ -37,11 +37,11 @@ angular.module("app")
 });
 ```
 
-Inserting the checkbox is then easy:
-```
+Inserting the checkbox is then an easy task:
+```xml
 <fluffy-checkbox label="checkbox 1" value="ch1"></fluffy-checkbox>
 ```
-Attribute `label` is a text label and `value` is a variable reflecting checkbox value.
+The attribute `label` is a text label and the `value` is a variable reflecting checkbox value.
 
 For a complete working example see our [sample page](https://cdn.rawgit.com/mnn/fluffy-checkbox/master/demo/index.html).
 
