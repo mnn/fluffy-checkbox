@@ -23,5 +23,5 @@ fluffy-checkbox .fc-outer.fc-unchecked .fc-inner {
   opacity: 0;
 }
 fluffy-checkbox .fc-label {
-  display: inline-block;
+  display: inline;
 }
