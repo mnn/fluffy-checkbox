@@ -37,28 +37,29 @@ angular.module("fluffyCheckbox")
     this.animateFlip = (fromValue) => {
       if (!this.changing) {
         this.changing = true
+        let Vel = window.Velocity || $.Velocity
         if ($scope.value) {
           // true -> false
-          Velocity(
+          Vel(
             innerElem[0],
             {opacity: [0, 1], scale: [0, fcs.innerScale]},
             {duration: fcs.animDisableLen, complete: this.flipValueAfterAnimation}
           )
         } else {
           // false -> true
-          Velocity(
+          Vel(
             innerElem[0],
             {opacity: [fcs.innerScale, 0]},
             {duration: fcs.animEnableLen, complete: this.flipValueAfterAnimation}
           )
           let secondAnim = function () {
-            Velocity(
+            Vel(
               innerElem[0],
               {scale: fcs.innerScale},
               {duration: fcs.animEnableLen * 0.3, queue: false}
             )
           }
-          Velocity(
+          Vel(
             innerElem[0],
             {scale: [fcs.innerScale * 1.6, 0]},
             {duration: fcs.animEnableLen * 0.7, queue: false, complete: secondAnim}

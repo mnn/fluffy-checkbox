@@ -39,18 +39,21 @@ angular.module("fluffyCheckbox").controller("FluffyCheckboxCtrl", function ($sco
   var fcs = FluffyCheckboxService;
   this.animateFlip = function (fromValue) {
     if (!_this.changing) {
-      _this.changing = true;
-      if ($scope.value) {
-        // true -> false
-        Velocity(innerElem[0], { opacity: [0, 1], scale: [0, fcs.innerScale] }, { duration: fcs.animDisableLen, complete: _this.flipValueAfterAnimation });
-      } else {
-        // false -> true
-        Velocity(innerElem[0], { opacity: [fcs.innerScale, 0] }, { duration: fcs.animEnableLen, complete: _this.flipValueAfterAnimation });
-        var secondAnim = function secondAnim() {
-          Velocity(innerElem[0], { scale: fcs.innerScale }, { duration: fcs.animEnableLen * 0.3, queue: false });
-        };
-        Velocity(innerElem[0], { scale: [fcs.innerScale * 1.6, 0] }, { duration: fcs.animEnableLen * 0.7, queue: false, complete: secondAnim });
-      }
+      (function () {
+        _this.changing = true;
+        var Vel = window.Velocity || $.Velocity;
+        if ($scope.value) {
+          // true -> false
+          Vel(innerElem[0], { opacity: [0, 1], scale: [0, fcs.innerScale] }, { duration: fcs.animDisableLen, complete: _this.flipValueAfterAnimation });
+        } else {
+          // false -> true
+          Vel(innerElem[0], { opacity: [fcs.innerScale, 0] }, { duration: fcs.animEnableLen, complete: _this.flipValueAfterAnimation });
+          var secondAnim = function secondAnim() {
+            Vel(innerElem[0], { scale: fcs.innerScale }, { duration: fcs.animEnableLen * 0.3, queue: false });
+          };
+          Vel(innerElem[0], { scale: [fcs.innerScale * 1.6, 0] }, { duration: fcs.animEnableLen * 0.7, queue: false, complete: secondAnim });
+        }
+      })();
     }
   };
   $scope.clicked = function () {
